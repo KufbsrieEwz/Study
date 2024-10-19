@@ -11,8 +11,8 @@ function run() {
             score++
             alert(`correct!\nyour streak is ${score}`)
         } else {
+            alert(`incorrect.\nyour streak was ${score}\nthe correct answer was: ${words[randomPlace]}`)
             score = 0
-            alert('incorrect.\nyour streak is 0\nthe correct answer was: ' + words[randomPlace])
         }
     }
     setTimeout(run, 500)
