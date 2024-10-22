@@ -91,6 +91,7 @@ function verify() {
         score = 0
         scoreHTML.innerText = score
         inputHTML.value = ''
+        accHTML.innerText = `Accuracy: ${Math.round(acc*100)}% (${totalScore} / ${questions})`
         setTimeout(ask, 5)
     }
 }
