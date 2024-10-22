@@ -42,14 +42,15 @@ const hints = [
     'Hint: Evil twin of the positron', // Electron
     'Hint: It is the largest organelle', // Nucleus
     'How did you not get this', // Mitochondria
-    'Hint: ', // Cytoplasm
-    'Hint: ', // Vacuole
-    'Hint: ', // Chlorophyll
-    'Hint: ', // Cell Wall
-    'Hint: ', // Cell Membrane
+    'Hint: Phytoplasmic bacteria', // Cytoplasm
+    'Hint: Kinda sounds like vacuum', // Vacuole
+    'Hint: Chlorine fill', // Chlorophyll
+    'Hint: Electric prison fence', // Cell Wall
+    'Hint: Permeable shell', // Cell Membrane
     'Hint: This is often confused with something else' // Cytosol
 ]
 let randomPlace
+let lastRandom
 let answer
 let score = 0
 let scoreHTML = document.getElementById('score')
@@ -61,8 +62,13 @@ scoreHTML.innerText = `Score: ${score}`
 
 function ask() {
     hintHTML.innerText = ''
+    lastRandom = randomPlace
     randomPlace = Math.floor(Math.random() * words.length)
-    promptHTML.innerText = prompts[randomPlace]
+    if (randomPlace == lastRandom) {
+        ask()
+    } else {
+        promptHTML.innerText = prompts[randomPlace]
+    }
 }
 function verify() {
     if (inputHTML.value.toLowerCase() == words[randomPlace].toLowerCase()) {
@@ -71,10 +77,12 @@ function verify() {
         inputHTML.value = ''
         setTimeout(ask, 5)
     } else if (hintHTML.innerText == '') {
+        inputHTML.value = ''
         hintHTML.innerText = hints[randomPlace]
     } else {
         score = 0
         scoreHTML.innerText = score
+        inputHTML.value = ''
         setTimeout(ask, 5)
     }
 }
