@@ -42,34 +42,48 @@ const hints = [
     'Hint: Evil twin of the positron', // Electron
     'Hint: It is the largest organelle', // Nucleus
     'How did you not get this', // Mitochondria
-    'Hint: It contains all the organelles', // Cytoplasm
-    'Hint: kinda sounds like vacuum', // Vacuole
-    'Hint: Chlorine fill', // Chlorophyll
-    'Hint: Electric prison fence', // Cell Wall
-    'Hint: It is permeable', // Cell Membrane
+    'Hint: ', // Cytoplasm
+    'Hint: ', // Vacuole
+    'Hint: ', // Chlorophyll
+    'Hint: ', // Cell Wall
+    'Hint: ', // Cell Membrane
     'Hint: This is often confused with something else' // Cytosol
 ]
 let randomPlace
 let answer
 let score = 0
-function run() {
+let scoreHTML = document.getElementById('score')
+let promptHTML = document.getElementById('prompt')
+let hintHTML = document.getElementById('hint')
+let inputHTML = document.getElementById('input')
+
+scoreHTML.innerText = `Score: ${score}`
+
+function ask() {
+    hintHTML.innerText = ''
     randomPlace = Math.floor(Math.random() * words.length)
-    answer = prompt(prompts[randomPlace])
-    if (typeof answer == 'string') {
-        if (answer.toLowerCase() == words[randomPlace].toLowerCase()) {
-            score++
-            alert(`correct!\nyour streak is ${score}`)
-        } else {
-            answer = prompt(hints[randomPlace])
-            if (answer.toLowerCase() == words[randomPlace].toLowerCase()) {
-                score++
-                alert(`correct!\nyour streak is ${score}`)
-            } else {
-                alert(`incorrect.\nyour streak was ${score}\nthe correct answer was: ${words[randomPlace]}`)
-                score = 0
-            }
-        }
-    }
-    setTimeout(run, 500)
+    promptHTML.innerText = prompts[randomPlace]
 }
-run()
+function verify() {
+    if (inputHTML.value.toLowerCase() == words[randomPlace].toLowerCase()) {
+        score++
+        scoreHTML.innerText = `Score: ${score}`
+        inputHTML.value = ''
+        setTimeout(ask, 5)
+    } else if (hintHTML.innerText == '') {
+        hintHTML.innerText = hints[randomPlace]
+    } else {
+        score = 0
+        scoreHTML.innerText = score
+        setTimeout(ask, 5)
+    }
+}
+
+document.addEventListener('keydown', function (event) {
+    if (event.key == 'Enter') {
+        verify()
+        event.preventDefault()
+    }
+})
+
+ask()
