@@ -42,11 +42,11 @@ const hints = [
     'Hint: Evil twin of the positron', // Electron
     'Hint: It is the largest organelle', // Nucleus
     'How did you not get this', // Mitochondria
-    'Hint: ', // Cytoplasm
-    'Hint: ', // Vacuole
-    'Hint: ', // Chlorophyll
-    'Hint: ', // Cell Wall
-    'Hint: ', // Cell Membrane
+    'Hint: It contains all the organelles', // Cytoplasm
+    'Hint: kinda sounds like vacuum', // Vacuole
+    'Hint: Chlorine fill', // Chlorophyll
+    'Hint: Electric prison fence', // Cell Wall
+    'Hint: It is permeable', // Cell Membrane
     'Hint: This is often confused with something else' // Cytosol
 ]
 let randomPlace
