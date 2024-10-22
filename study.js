@@ -53,12 +53,16 @@ let randomPlace
 let lastRandom
 let answer
 let score = 0
+let questions = 0
+let totalScore = 0
 let scoreHTML = document.getElementById('score')
 let promptHTML = document.getElementById('prompt')
 let hintHTML = document.getElementById('hint')
 let inputHTML = document.getElementById('input')
+let accHTML = document.getElementById('acc')
 
 scoreHTML.innerText = `Score: ${score}`
+accHTML.innerText = `Accuracy: ${Math.round(acc*100)}% (${totalScore} / ${questions})`
 
 function ask() {
     hintHTML.innerText = ''
@@ -68,12 +72,16 @@ function ask() {
         ask()
     } else {
         promptHTML.innerText = prompts[randomPlace]
+        questions++
     }
 }
 function verify() {
     if (inputHTML.value.toLowerCase() == words[randomPlace].toLowerCase()) {
         score++
+        totalScore++
+        acc = totalScore / questions
         scoreHTML.innerText = `Score: ${score}`
+        accHTML.innerText = `Accuracy: ${Math.round(acc*100)}% (${totalScore} / ${questions})`
         inputHTML.value = ''
         setTimeout(ask, 5)
     } else if (hintHTML.innerText == '') {
