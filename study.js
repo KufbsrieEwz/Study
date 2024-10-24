@@ -90,7 +90,7 @@ const prompts = [
     'This structure helps focus light onto the specimen on the microscope stage', // Condenser Lens
     'This microscope knob moves the stage up and down but less. You use this to sharpen an image on the microscope', // Fine Adjustment Knob
     'This is where the objective lenses are mounted', // Revolving Nosepiece
-    'This part beneath the stage is made of holes of varying sizes to change the amount of light that goes into the specimen', // Diaphram
+    'This part beneath the stage is made of holes of varying sizes to change the amount of light that goes into the specimen', // Diaphragm
     'This is the where the light comes that illuminates the specimen comes from', // Lamp
     'This is the part that holds the tube in place', // Arm
     'This provides a stable platform for the microscope', // Base
@@ -104,12 +104,26 @@ const prompts = [
     'A type of bacteria that utilizes hair-like protrusions to move', // Paramecia
     'A type of bacteria that need oxygen to survive',  // Aerobic
     'A type of bacteria that dies if given oxygen', // Anaerobic
-    'A type of bacteria that can live without oxygen, but function best with it', // Facultative Anaerobes
+    'A type of bacteria that can live without oxygen, but functions best with it', // Facultative Anaerobes
     'A type of bacteria that are harmful to you', // Pathogenic
     'A type of treatment that provents the reproduction of or directly kills bacteria', // Antibiotics
     'A type of food that contains good bacteria that fights off harmful bacteria and improves gut health', // Probiotics
     'Small parasites', // Viruses
-    'A fully assembled version of a type of small parasite. These are versions of the parasite that are ready to infect you' // Virions
+    'A fully assembled version of a type of small parasite. These are versions of the parasite that are ready to infect you', // Virions
+    'To enter a cell, this virus fuses with the membrane and then pushes itself through', // HIV
+    'To enter a cell, this virus is engulfed by the cell', // Influenza
+    'To enter a cell, this virus creates a porous channel of entry and burrows through the membrane', // Polio
+    'If we inhale a virus, this bodily defense will kill it', // Mucous traps
+    'If we swallow a virus, this bodily defense will kill it', // Stomach Acid
+    'If the virus gets past the first line of defense, this bodily defense will kill it', // Innate Immune System
+    'After an infenction, these cells retain a memory of any previous infection and they form antibodies', // Lymphocytes
+    'This is a protective measure, usually taken as a shot, that contains a weakend or dead version of a microbe to create antibodies against it', // Vaccine
+    'This is a possible way that bacteria or viruses can enter the body. It has to do with the holes that are used for living', // Respiratory Passages
+    'This is a possible way that bacteria or viruses can enter the body. It has to do with holes that are created from accidents', // Open Wounds
+    '1. Viruses need to access ______.', // Step 1 of infiltration 
+    '2. Viruses will then attach themselves to host ______.', // Step 2 of infiltration
+    '3. After a virus binds to the surfact of the host cell, they will then try to ______ the host cell.', // Step 3 of infiltration
+    '4. Once inside, viruses release their ______ and then replicates.' // Step 4 of infiltration
 ]
 const words = [
     'Cell',
@@ -152,7 +166,7 @@ const words = [
     'Condenser Lens',
     'Fine Adjustment Knob',
     'Revolving Nosepiece',
-    'Diaphram',
+    'Diaphragm',
     'Lamp',
     'Arm',
     'Base',
@@ -171,7 +185,21 @@ const words = [
     'Antibiotics',
     'Probiotics',
     'Viruses',
-    'Virions'
+    'Virions',
+    'HIV',
+    'Influenza',
+    'Polio',
+    'Mucous traps',
+    'Stomach Acid',
+    'Innate Immune System',
+    'Lymphocytes',
+    'Vaccine',
+    'Respiratory Passages',
+    'Open wounds',
+    "The inside of a host's body",
+    'Cell surfaces',
+    'Enter',
+    'Deoxyribonucleic acid'
 ]
 const hints = [
     'Hint: We looked at onion ___s under a microscope in class', // Cell
@@ -213,9 +241,8 @@ const hints = [
     'Hint: ', // Coarse Adjustment Knob
     'Hint: ', // Condenser Lens
     'Hint: ', // Fine Adjustment Knob
-    'Hint: ', // Fine Adjustment Knob
     'Hint: ', // Revolving Nosepiece
-    'Hint: ', // Diaphram
+    'Hint: ', // Diaphragm
     'Hint: This can also be called the light source', // Lamp
     'Hint: You also hold onto this to carry and move the microscope', // Arm
     'Hint: What do you call what something bottom of something that holds everything up?', // Base
@@ -234,7 +261,21 @@ const hints = [
     'Hint: Plural', // Antibiotics
     'Hint: Plural', // Probiotics
     'Hint: These parasites can be very deadly and constantly being debated on if they are living or not', // Viruses
-    'Hint: If you somehow could not tell, the "small parasite" is a virus' // Virions
+    'Hint: If you somehow could not tell, the "small parasite" is a virus', // Virions
+    'Hint: ', // HIV
+    'Hint: ', // Influenza
+    'Hint: ', // Polio
+    'Hint: ', // Mucous traps
+    'Hint: ', // Stomach Acid
+    'Hint: ', // Innate Immune System
+    'Hint: This is a collective term for T cells and B cells', // Lymphocytes
+    'Hint: You get multiple of these when you are just born', // Vaccine
+    'Hint: Has to do with breathing', // Respiratory Passages
+    'Hint: Could possibly be from cuts', // Open Wounds
+    'Hint: ', // Step 1 of infiltration 
+    'Hint: ', // Step 2 of infiltration
+    'Hint: ', // Step 3 of infiltration
+    'Hint: I am challenging you to spell this one, however you should know the abbreviation at the least' // Step 4 of infiltration
 ]
 
 let randomPlace
