@@ -79,7 +79,7 @@ const prompts = [
     'A material that does not allow liquids or gases to pass through it', // Impermeable
     'The amount of a given substance contained within a solution', // Concentration
     'The movement of molecules from an area of high concentration to low concentration', // Diffusion
-    'The process by which solvent molecules pass through a semipermeable membrane from a less concentrated to a more concentrated solution', // Osmosis
+    'The movement of molecules between a cell membrane and/or a cell wall from high concentration to low concentration', // Osmosis
     'An organism that consists of only one cell', // Unicellular Organism
     'An organism that consists of more than one cell', // Multicellular Organism
     'This organelle synthesizes proteins in the cell', // Ribosome
