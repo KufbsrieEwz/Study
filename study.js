@@ -106,7 +106,7 @@ const prompts = [
     'A type of bacteria that dies if given oxygen', // Anaerobic
     'A type of bacteria that can live without oxygen, but functions best with it', // Facultative Anaerobes
     'A type of bacteria that are harmful to you', // Pathogenic
-    'A type of treatment that provents the reproduction of or directly kills bacteria', // Antibiotics
+    'A type of treatment that prevents the reproduction of or directly kills bacteria', // Antibiotics
     'A type of food that contains good bacteria that fights off harmful bacteria and improves gut health', // Probiotics
     'Small parasites', // Viruses
     'A fully assembled version of a type of small parasite. These are versions of the parasite that are ready to infect you', // Virions
