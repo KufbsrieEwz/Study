@@ -83,7 +83,7 @@ const prompts = [
     'An organism that consists of only one cell', // Unicellular Organism
     'An organism that consists of more than one cell', // Multicellular Organism
     'This organelle synthesizes proteins in the cell', // Ribosome
-    'The stage of the microscope where the slide is placed for observation', // Stage
+    'The place of the microscope where the slide is placed for observation', // Stage
     'This lens magnifies the specimen in the microscope and is the one you look through', // Ocular Lens
     'These are used to hold a slide in position on the microscope stage', // Stage Clips
     'This microscope knob moves the stage up and down for focusing on the specimen', // Coarse Adjustment Knob
