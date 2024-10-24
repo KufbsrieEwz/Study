@@ -69,24 +69,47 @@ const prompts = [
     'This is everything between the membrane of the cell and the nucleus', // Cytoplasm
     'A space or vesicle within the cytoplasm of a cell enclosed by a membrane and typically containing food or fluids.', // Vacuole
     'A green pigment found in green plants and cyanobacteria responsible for photosynthesis', // Chlorophyll
-    'A structural layer found immediately outside the cell membrane, and is only found in some cells, usually plant cells', // Cell Wall
+    'A structural layer found immediately outside the cell membrane', // Cell Wall
     `It protects the cell, keeping the cell's parts within, and encloses them. It is permeable to some substances and impermeable to others`, // Cell Membrane
     `The liquid inside of a cell's membrane that takes up all space not occupied by organelles`, // Cytosol
     'An organelle that helps transport, sort, and modify proteins and lipids for use elsewhere', // Golgi Apparatus
-    'An organelle that produces proteins for the cell; made up of smooth and rough types', // Endoplasmic Reticulum
+    'An organelle that produces proteins for the cell', // Endoplasmic Reticulum
     'This organelle helps break down and recycle waste within a cell', // Lysosome
     'A material that allows liquids or gases to pass through it', // Permeable
     'A material that does not allow liquids or gases to pass through it', // Impermeable
+    'The amount of a given substance contained within a solution', // Concentration
     'The movement of molecules from an area of high concentration to low concentration', // Diffusion
     'The process by which solvent molecules pass through a semipermeable membrane from a less concentrated to a more concentrated solution', // Osmosis
     'An organism that consists of only one cell', // Unicellular Organism
     'An organism that consists of more than one cell', // Multicellular Organism
+    'This organelle synthesizes proteins in the cell', // Ribosome
     'The stage of the microscope where the slide is placed for observation', // Stage
-    'This lens magnifies the specimen in the microscope and is the one you look through', // Ocular Lens/Eyepiece
+    'This lens magnifies the specimen in the microscope and is the one you look through', // Ocular Lens
     'These are used to hold a slide in position on the microscope stage', // Stage Clips
     'This microscope knob moves the stage up and down for focusing on the specimen', // Coarse Adjustment Knob
-    'This organelle synthesizes proteins in the cell', // Ribosome
     'This structure helps focus light onto the specimen on the microscope stage', // Condenser Lens
+    'This microscope knob moves the stage up and down but less. You use this to sharpen an image on the microscope', // Fine Adjustment Knob
+    'This is where the objective lenses are mounted', // Revolving Nosepiece
+    'This part beneath the stage is made of holes of varying sizes to change the amount of light that goes into the specimen', // Diaphram
+    'This is the where the light comes that illuminates the specimen comes from', // Lamp
+    'This is the part that holds the tube in place', // Arm
+    'This provides a stable platform for the microscope', // Base
+    'This seperatese the ocular lens from the objective lenses', // Tube
+    'These living things are unicellular', // Bacteria
+    'A method of movement that utilizes stretching and changing shape', // Cytoplasmic Streaming
+    'A method of movement that utilizes a tail that propels the bacteria through water', // Flagellum
+    'A method of movement that utilizes hair-like protrusions to spiral through water', // Cilia
+    'A type of bacteria that utilizes shape-changing to move', // Ameoba
+    'A type of bacteria that utilizes a tail to move', // Euglena
+    'A type of bacteria that utilizes hair-like protrusions to move', // Paramecia
+    'A type of bacteria that need oxygen to survive',  // Aerobic
+    'A type of bacteria that dies if given oxygen', // Anaerobic
+    'A type of bacteria that can live without oxygen, but function best with it', // Facultative Anaerobes
+    'A type of bacteria that are harmful to you', // Pathogenic
+    'A type of treatment that provents the reproduction of or directly kills bacteria', // Antibiotics
+    'A type of food that contains good bacteria that fights off harmful bacteria and improves gut health', // Probiotics
+    'Small parasites', // Viruses
+    'A fully assembled version of a type of small parasite. These are versions of the parasite that are ready to infect you' // Virions
 ]
 const words = [
     'Cell',
@@ -116,16 +139,39 @@ const words = [
     'Lysosome',
     'Permeable',
     'Impermeable',
+    'Concentration',
     'Diffusion',
     'Osmosis',
     'Unicellular',
     'Multicellular',
+    'Ribosome',
     'Stage',
     'Ocular Lens',
     'Stage Clips',
     'Coarse Adjustment Knob',
-    'Ribosome',
     'Condenser Lens',
+    'Fine Adjustment Knob',
+    'Revolving Nosepiece',
+    'Diaphram',
+    'Lamp',
+    'Arm',
+    'Base',
+    'Tube',
+    'Bacteria',
+    'Cytoplasmic Streaming',
+    'Flagellum',
+    'Cilia',
+    'Ameoba',
+    'Euglena',
+    'Paramecia',
+    'Aerobic', 
+    'Anaerobic',
+    'Facultative Anaerobes',
+    'Pathogenic',
+    'Antibiotics',
+    'Probiotics',
+    'Viruses',
+    'Virions'
 ]
 const hints = [
     'Hint: We looked at onion ___s under a microscope in class', // Cell
@@ -146,25 +192,49 @@ const hints = [
     'How did you not get this', // Mitochondria
     'Hint: Jelly-like substance surrounding organelles', // Cytoplasm
     'Hint: Kinda sounds like vacuum', // Vacuole
-    'Hint: Responsible for photosynthesis', // Chlorophyll
+    'Hint: ', // Chlorophyll
     'Hint: Found in plant cells, not animal cells', // Cell Wall
     'Hint: Permeable shell', // Cell Membrane
     'Hint: This is often confused with something else', // Cytosol
-    'Hint: Helps move proteins and lipids', // Golgi Apparatus
+    'Hint: ', // Golgi Apparatus
     'Hint: Rough and smooth versions exist', // Endoplasmic Reticulum
-    'Hint: Breaks down waste', // Lysosome
-    'Hint: Allows liquids and gases to pass', // Permeable
-    'Hint: Blocks substances from passing', // Impermeable
-    'Hint: Movement from high to low concentration', // Diffusion
-    'Hint: A process involved in water balance across membranes', // Osmosis
-    'Hint: One cell only', // Unicellular Organism
-    'Hint: More than one cell', // Multicellular Organism
-    'Hint: Place for slide observation', // Stage
-    'Hint: Lens you look through', // Ocular Lens/Eyepiece
-    'Hint: Holds the slide in place', // Stage Clips
-    'Hint: Moves stage to focus', // Coarse Adjustment Knob
-    'Hint: Protein synthesis machine', // Ribosome
-    'Hint: Focuses light', // Condenser Lens
+    'Hint: ', // Lysosome
+    'Hint: You might think of the definition of this as "A descriptor meaning some things can go through and some cant"', // Permeable
+    'Hint: You might think of the definition of this as "A descriptor meaning that nothing can go through"', // Impermeable
+    'Hint: Density', // Concentration
+    'Hint: ', // Diffusion
+    'Hint: ', // Osmosis
+    'Hint: ', // Unicellular Organism
+    'Hint: ', // Multicellular Organism
+    'Hint: ', // Ribosome
+    'Hint: ', // Stage
+    'Hint: ', // Ocular Lens/Eyepiece
+    'Hint: ', // Stage Clips
+    'Hint: ', // Coarse Adjustment Knob
+    'Hint: ', // Condenser Lens
+    'Hint: ', // Fine Adjustment Knob
+    'Hint: ', // Fine Adjustment Knob
+    'Hint: ', // Revolving Nosepiece
+    'Hint: ', // Diaphram
+    'Hint: This can also be called the light source', // Lamp
+    'Hint: You also hold onto this to carry and move the microscope', // Arm
+    'Hint: What do you call what something bottom of something that holds everything up?', // Base
+    'Hint: ', // Tube
+    'Hint: ', // Bacteria
+    'Hint: Ameoba use this to move', // Cytoplasmic Streaming
+    'Hint: Euglena use this to move', // Flagellum
+    'Hint: Paramecia use this to move', // Cilia
+    'Hint: The method of movement is called Cytoplasmic Streaming', // Ameoba
+    'Hint: The method of movement is with a Flagellum', // Euglena
+    'Hint: The method of movement is with Cilia', // Paramecia
+    'Hint: Only type the adjective',  // Aerobic
+    'Hint: Only type the adjective', // Anaerobic
+    'Hint: Contrary to the other two, type the noun (it is plural as well)', // Facultative Anaerobes
+    'Hint: The word comes from two Greek terms. One meaning harm or sickness, and the other being a suffix meaning " to cause/create"', // Pathogenic
+    'Hint: Plural', // Antibiotics
+    'Hint: Plural', // Probiotics
+    'Hint: These parasites can be very deadly and constantly being debated on if they are living or not', // Viruses
+    'Hint: If you somehow could not tell, the "small parasite" is a virus' // Virions
 ]
 
 let randomPlace
