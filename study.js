@@ -122,7 +122,7 @@ const prompts = [
     'This is a possible way that bacteria or viruses can enter the body. It has to do with holes that are created from accidents', // Open Wounds
     '1. Viruses need to access ______.', // Step 1 of infiltration 
     '2. Viruses will then attach themselves to host ______.', // Step 2 of infiltration
-    '3. After a virus binds to the surfact of the host cell, they will then try to ______ the host cell.', // Step 3 of infiltration
+    '3. After a virus binds to the surface of the host cell, they will then try to ______ the host cell.', // Step 3 of infiltration
     '4. Once inside, viruses release their ______ and then replicates.' // Step 4 of infiltration
 ]
 const words = [
