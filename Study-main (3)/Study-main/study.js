@@ -167,6 +167,7 @@ const hints = [
     'Hint: Focuses light', // Condenser Lens
 ]
 
+let qboardno = 0
 let randomPlace
 let lastRandom
 let answer
@@ -185,31 +186,37 @@ let tableHTML = document.getElementById('table')
 let qshown = []
 let qleaderboard = []
 
+/*
 let ntr = document.createElement("tr")
 ntr.appendChild(document.createElement("td"))
 ntr.appendChild(document.createElement("td")) //there are two table datas
 let nntr
+*/
+
 // if you want to make the leaderboard sort highest to lowest (i dont know why you would) you just put reverse(sort()) instead
 
 // vvv for table setup (same reason as the array setup below)
-
+/*
 for (let i = prompts.length; i < prompts.length; i++) {
   nntr = ntr.cloneNode(true)
   nntr.setAttribute("id", "r" + i)
   tableHTML.appendChild(nntr)
   nntr.children[0].innerHTML = "e"
 }
-
+*/
 
 // vvv for table accuracy
 let qyes = []
-let qno = []
+let qtotal = []
+
+let qidk = []
 
 // vvv for array setup so that i dont have to put in a new blank value to the array whenever a new question is added
 for (let i = 0; i < prompts.length; i++) {
   qshown.push(false)
   qyes.push(0)
-  qno.push(0)
+  qtotal.push(0)
+  qidk.push('')
 }
 
 scoreHTML.innerText = `Score: ${score}`
@@ -245,11 +252,27 @@ function verify() {
         acc = totalScore / questions
         accHTML.innerText = `Accuracy: ${Math.round(acc*100)}% (${totalScore} / ${questions})`
         hintHTML.innerText = words[randomPlace]
-        if (qshown[randomplace] == false) {
-
+        if (qshown[randomPlace] == false) {
+          qshown[randomPlace] = true
+          qtotal[qboardno]++
+          qidk[qboardno] = document.createElement("tr")
+          qidk[qboardno].appendChild(document.createElement("td"))
+          qidk[qboardno].appendChild(document.createElement("td"))
+          qidk[qboardno].setAttribute("id", "r" + qboardno)
+          tableHTML.appendChild(qidk[qboardno])
+          updateqboard()
+          qboardno++
         }
         setTimeout(ask, 3000)
     }
+}
+
+function updateqboard() {
+  for (let i = 0; i < prompts.length; i++) {
+    qleaderboard[i] = qyes[i] / qtotal[i]
+    document.getElementById("r" + i).children[0].innerText = prompts[i]
+    document.getElementById("r" + i).children[1].innerText = qleaderboard[i]
+  }
 }
 
 document.addEventListener('keydown', function (event) {
