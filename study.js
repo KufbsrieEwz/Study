@@ -59,7 +59,7 @@ const prompts = [
     'The scientist who first discovered microorganisms in 1674', // Anton van Leeuwenhoek
     'Discovered that each plant cell is contained in a continuous membrane in 1809', // Charles-Francois Brisseau de Mirbel
     'This scientist stated that plant and animal cells are the basic units of life in 1824', // Henri Dutrochet
-    'The two scientists who co-founded the postulate that all living things are made of cells or cell products', // Theodor Schwann and Mattias Jakob Schleiden
+    'The two scientists who co-founded the postulate that all living things are made of cells or cell products', // Theodor Schwann and Matthias Jakob Schleiden
     'The scientist who discovered in 1855 that all cells come from pre-existing cells', // Rudolph Virchow
     'A subcellular structure that has one or more specific jobs to perform in the cell', // Organelle
     'A threadlike structure of nucleic acids and protein found in the nucleus of most living cells, carrying genetic information in the form of genes', // Chromosome
@@ -135,7 +135,7 @@ const words = [
     'Anton van Leeuwenhoek',
     'Charles-Francois Brisseau de Mirbel',
     'Henri Dutrochet',
-    'Theodor Schwann and Mattias Jakob Schleiden',
+    'Theodor Schwann and Matthias Jakob Schleiden',
     'Rudolph Virchow',
     'Organelle',
     'Chromosome',
@@ -211,7 +211,7 @@ const hints = [
     'Hint: Discovered microorganisms', // Anton van Leeuwenhoek
     'Hint: Continuous membrane discovery', // Charles-Francois Brisseau de Mirbel
     'Hint: The unit of both plant and animal life', // Henri Dutrochet
-    'Hint: Two founders of cell theory', // Theodor Schwann and Mattias Jakob Schleiden
+    'Hint: Two founders of cell theory', // Theodor Schwann and Matthias Jakob Schleiden
     'Hint: Discovered cell reproduction', // Rudolph Virchow
     'Hint: Organs of the cell', // Organelle
     'Hint: XY and XX ___s', // Chromosomes
