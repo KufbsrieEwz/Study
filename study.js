@@ -94,7 +94,7 @@ const prompts = [
     'This is the where the light comes that illuminates the specimen comes from', // Lamp
     'This is the part that holds the tube in place', // Arm
     'This provides a stable platform for the microscope', // Base
-    'This seperatese the ocular lens from the objective lenses', // Tube
+    'This seperates the ocular lens from the objective lenses', // Tube
     'These living things are unicellular', // Bacteria
     'A method of movement that utilizes stretching and changing shape', // Cytoplasmic Streaming
     'A method of movement that utilizes a tail that propels the bacteria through water', // Flagellum
