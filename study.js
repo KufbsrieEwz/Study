@@ -323,6 +323,7 @@ function verify() {
         inputHTML.value = ''
         acc = totalScore / questions
         accHTML.innerText = `Accuracy: ${Math.round(acc*100)}% (${totalScore} / ${questions})`
+        promptHTML.innerText = 'Answer:'
         hintHTML.innerText = words[randomPlace]
         setTimeout(ask, 3000)
     }
