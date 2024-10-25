@@ -54,7 +54,7 @@ const prompts = [
     'Postulate #1',
     'Postulate #2',
     'Postulate #3',
-    'The scientist who invented the first compound microscope in 1595', // Zacharias Janseen
+    'The scientist who invented the first compound microscope in 1595', // Zacharias Janssen
     'The scientist who discovered the first cell in 1663', // Robert Hooke
     'The scientist who first discovered microorganisms in 1674', // Anton van Leeuwenhoek
     'Discovered that each plant cell is contained in a continuous membrane in 1809', // Charles-Francois Brisseau de Mirbel
@@ -130,7 +130,7 @@ const words = [
     'All living things are made up of one or more cells',
     'The cell is the basic unit of function in living things',
     'All cells come from pre-existing cells',
-    'Zacharias Janseen',
+    'Zacharias Janssen',
     'Robert Hooke',
     'Anton van Leeuwenhoek',
     'Charles-Francois Brisseau de Mirbel',
@@ -206,7 +206,7 @@ const hints = [
     'Hint: This postulate says all living things have this in common', // Postulate #1
     'Hint: Fundamental building block', // Postulate #2
     'Hint: Reproduction of cells', // Postulate #3
-    'Hint: Inventor of a crucial tool for biology', // Zacharias Janseen
+    'Hint: Inventor of a crucial tool for biology', // Zacharias Janssen
     'Hint: Named the "cell"', // Robert Hooke
     'Hint: Discovered microorganisms', // Anton van Leeuwenhoek
     'Hint: Continuous membrane discovery', // Charles-Francois Brisseau de Mirbel
